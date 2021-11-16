@@ -4,14 +4,6 @@ plugins {
 }
 
 android {
-
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-            assets.srcDirs 'src\\main\\assets'
-        }
-    }
-
     compileSdk 31
 
     defaultConfig {
@@ -41,6 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs 'src\\main\\assets'
+        }
+    }
     viewBinding.enabled = true
 }
 
@@ -56,7 +54,7 @@ dependencies {
     natives "com.badlogicgames.gdx:gdx-platform:$gdx_version:natives-arm64-v8a"
     natives "com.badlogicgames.gdx:gdx-platform:$gdx_version:natives-x86"
     natives "com.badlogicgames.gdx:gdx-platform:$gdx_version:natives-x86_64"
-    def core_version = '1.6.0'
+    def core_version = '1.7.0'
     implementation "androidx.core:core-ktx:$core_version"
     def appcompat_version = '1.3.1'
     implementation "androidx.appcompat:appcompat:$appcompat_version"
